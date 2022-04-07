@@ -100,6 +100,11 @@ res = exchange.fapiPrivateGetPositionSideDual()
 print(res)
 print()
 
+print('Setting your positions to Hedge mode:')
+response = exchange.fapiPrivate_post_positionside_dual({'dualSidePosition': True})
+print(response)
+
+
 print('Getting your current position mode (One-way or Hedge Mode):')
 response = exchange.fapiPrivate_get_positionside_dual()
 if response['dualSidePosition']:
@@ -110,11 +115,7 @@ else:
 print('----------------------------------------------------------------------')
 
 
-# print('Setting your positions to Hedge mode:')
-# response = exchange.fapiPrivate_post_positionside_dual({
-#     'dualSidePosition': True,
-# })
-# print(response)
+
 
 # print('----------------------------------------------------------------------')
 
